@@ -20,12 +20,13 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-from publication_app.views import main_page
+from publication_app.views import main_page, registration_page
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_page, name='main_page')
+    path('', main_page, name='main_page'),
+    path('registration/', registration_page, name='registration_page'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
